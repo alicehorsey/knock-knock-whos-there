@@ -4,12 +4,16 @@
   "description": "The back-end for my joke web application",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "setup-database": "psql -f ./database/setup.sql",
+    "seed-database": "npm run setup-database && knex seed:run",
+    "test": "jest formatting.test.js"
   },
   "author": "Alice Horsey",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "jest": "^26.6.3",
+    "knex": "^0.21.17",
     "pg": "^8.5.1"
   }
 }
