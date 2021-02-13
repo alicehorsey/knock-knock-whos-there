@@ -1,14 +1,28 @@
 const connection = require("../database/connect");
 
 const fetchAllJokes = () => {
-    console.log("inside model")
     return connection
         .select("*")
         .from("jokes_table")
         .then((jokesRows) => {
-            return { jokes: jokesRows }
+            return { jokes: jokesRows };
         })
-
 }
 
-module.exports = { fetchAllJokes };
+const fetchJokeById = (joke_id) => {
+
+    return connection
+        .select("*")
+        .from("jokes_table")
+        .where("id", "=", joke_id)
+        .then((joke) => {
+            if (!joke.length) {
+                return Promise.reject({ status: 404, msg: "Not Found" });
+            } else {
+                return { joke: joke[0] };
+            }
+        })
+}
+
+
+module.exports = { fetchAllJokes, fetchJokeById };
