@@ -10,3 +10,9 @@ export const getAllJokes = () => {
     })
 };
 
+export const getJokeById = (jokeId) => {
+    return jokesAPI.get(`http://localhost:${localPort}/jokes/${jokeId}`).then(({ data }) => {
+        return data.joke;
+    })
+};
+
