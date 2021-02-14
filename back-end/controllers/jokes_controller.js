@@ -1,4 +1,3 @@
-const jokeRouter = require("../routes/joke_router");
 const { fetchAllJokes, fetchJokeById } = require("../models/jokes_model");
 
 const getAllJokes = (req, res, next) => {
