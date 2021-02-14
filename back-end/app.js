@@ -1,8 +1,11 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const { getAllJokes, getJokeById } = require("./controllers/jokes_controller")
 const { handleInternalErrors, handleCustomErrors, send404 } = require("./controllers/errors");
 
+
+app.use(cors())
 app.use(express.json());
 const localPort = 8080;
 app.listen(localPort, () => {
