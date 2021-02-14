@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const jokeRouter = require("./routes/joke_router");
+const { getAllJokes, getJokeById } = require("./controllers/jokes_controller")
 const { handleInternalErrors, handleCustomErrors, send404 } = require("./controllers/errors");
 
 app.use(express.json());
@@ -9,7 +9,10 @@ app.listen(localPort, () => {
     console.log(`Joke App Back End listening at http://localhost:${localPort}`);
 })
 
-app.use("/jokes", jokeRouter);
+
+//Add a "/" endpoint to just get a json back of the available endpoints here.
+app.use("/jokes/:jokeId", getJokeById);
+app.use("/jokes", getAllJokes);
 app.use("/*", send404);
 
 app.use(handleCustomErrors);
