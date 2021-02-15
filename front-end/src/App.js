@@ -91,20 +91,16 @@ class App extends Component {
           <h2>Welcome to Knock Knock Who's There! The best place to find the funniest jokes!</h2>
           <img src={haha} alt="Haha Bubble"></img>
 
-          <div className="joke-section">
-            <h2>Click on the button below to start!</h2>
-            <button className="tellJokeButton" onClick={this.handleTellJokeClick}>Tell Me A Joke!</button>
-          </div>
+          <h2>Click on the button below to start!</h2>
+          <button className="tellJokeButton" onClick={this.handleTellJokeClick}>Tell Me A Joke!</button>
         </div>
       );
     } else if (displayPunchlineButton) {
       return (
         <div className="App">
           <Title />
-          <div className="joke-section">
-            <h2>{joke.setup}</h2>
-            <button className="tellPunchlineButton" onClick={this.handlePunchlineClick}>Reveal punchline!</button>
-          </div>
+          <h2 className="joke-setup">{joke.setup}</h2>
+          <button className="tellPunchlineButton" onClick={this.handlePunchlineClick}>Reveal punchline!</button>
         </div>
       );
     } else if (displayNextButton) {
@@ -115,12 +111,10 @@ class App extends Component {
       return (
         <div className="App">
           <Title />
-          <div className="joke-section">
-            <h2>{joke.setup}</h2>
-            <h2>{joke.punchline}</h2>
-            <p hidden={isNext}>We're sorry to say this is your last joke! Boooo! Click on the button to refresh!</p>
-            <button className="NextButton" onClick={isNext ? this.handleNextClick : this.handleRefreshClick}>{isNext ? "Next Joke!" : "Refresh"}</button>
-          </div>
+          <h2 className="joke-setup">{joke.setup}</h2>
+          <h2 className="joke-punchline">{joke.punchline}</h2>
+          <p hidden={isNext}>We're sorry to say this is your last joke! Boooo! Click on the button to refresh!</p>
+          <button className="nextButton" onClick={isNext ? this.handleNextClick : this.handleRefreshClick}>{isNext ? "Next Joke!" : "Refresh"}</button>
         </div>
       );
     }

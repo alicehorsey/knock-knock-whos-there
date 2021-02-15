@@ -5,25 +5,87 @@
   width: 100vw;
 }
 
-.joke-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.title, .loading {
+    padding-top: 10vh;
+    padding-bottom: 2vh;
+    margin: 0;
+    font-size: 6em;
+    font-family: American Typewriter, serif;
+    background-image: linear-gradient(to right, #DE0014, #DE0014, #DE0014, #F99823, yellow, green, blue, indigo, violet, violet, violet);
+    background-clip: text;
+    color: transparent;
 }
 
 h2 {
-  font-family: 'American Typewriter, serif';
+  font-family: American Typewriter, serif;
   font-size: 2em;
   color: indigo;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 img {
-  margin: 10pt;
+  margin: 50px;
 }
 
-.tellJokeButton {
-  padding: 20pt;
+.joke-setup {
+  padding-top: 100px;
+  font-size: 40px;
+  margin-bottom: 75px;
 }
+
+.joke-punchline {
+  font-size: 35px;
+  margin-bottom: 75px;
+}
+
+/* Buttons */
+
+.tellJokeButton, .tellPunchlineButton, .nextButton{
+  padding: 20px;
+  background-color: #DE0014;
+  color: indigo;
+  font-family: American Typewriter, serif;
+  font-size: 30px;
+  border-radius: 25px;
+  border: none;
+  outline:none;
+  margin: 20px;
+  justify-self: flex-end;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.tellJokeButton:hover {
+  background-color: green;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.tellPunchlineButton {
+  background-color: orange;
+  color: indigo;
+}
+
+.tellPunchlineButton:hover {
+  background-color: blue;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.nextButton {
+  background-color: #DE0014;
+  color: indigo;
+}
+
+.nextButton:hover {
+  background-color: green;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.tellJokeButton:active, .tellPunchlineButton:active, .nextButton:active {
+  box-shadow: none;
+}
+
 
 
