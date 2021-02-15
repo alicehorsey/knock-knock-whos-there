@@ -8,6 +8,8 @@ To view this web application on your local machine please follow these steps, af
 
 1. In the terminal navigate to the ```knock-knock-whos-there``` folder then ```cd back-end``` into the back-end folder.
 
+NB: I built this project using node v14.15.4.
+
 2. Create a knexfile.js at the root of the folder with the following code inside, as well as any passwords your machine may require.
 
 ```
