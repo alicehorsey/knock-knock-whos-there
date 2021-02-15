@@ -2,8 +2,7 @@ import './App.css';
 import React, { Component } from 'react';
 import { Loading, Title } from "./components";
 import { getAllJokes, getJokeById } from "./api";
-
-
+import haha from "./images/funny-hahaha.png";
 
 class App extends Component {
   state = {
@@ -89,30 +88,39 @@ class App extends Component {
       return (
         <div className="App">
           <Title />
-          <h2>Welcome to Knock Knock Who's There! Your one stop shop for the funniest jokes! Click on the button below to start!</h2>
-          <button className="tellJokeButton" onClick={this.handleTellJokeClick}>Tell Me A Joke!</button>
+          <h2>Welcome to Knock Knock Who's There! The best place to find the funniest jokes!</h2>
+          <img src={haha} alt="Haha Bubble"></img>
+
+          <div className="joke-section">
+            <h2>Click on the button below to start!</h2>
+            <button className="tellJokeButton" onClick={this.handleTellJokeClick}>Tell Me A Joke!</button>
+          </div>
         </div>
       );
     } else if (displayPunchlineButton) {
       return (
         <div className="App">
           <Title />
-          <h2>{joke.setup}</h2>
-          <button className="tellPunchlineButton" onClick={this.handlePunchlineClick}>Reveal punchline!</button>
+          <div className="joke-section">
+            <h2>{joke.setup}</h2>
+            <button className="tellPunchlineButton" onClick={this.handlePunchlineClick}>Reveal punchline!</button>
+          </div>
         </div>
       );
     } else if (displayNextButton) {
 
-      //When we get the end of all the jokes the Next Button changes to say Refresh to start from the beginning again.
+      //When we get to the end of all the jokes the Next Button changes to say Refresh to start from the beginning again.
       const isNext = jokesShown.length !== totalJokes;
 
       return (
         <div className="App">
           <Title />
-          <h2>{joke.setup}</h2>
-          <h2>{joke.punchline}</h2>
-          <p hidden={isNext}>We're sorry to say this is your last joke! Boooo! Click on the button to refresh!</p>
-          <button className="NextButton" onClick={isNext ? this.handleNextClick : this.handleRefreshClick}>{isNext ? "Next Joke!" : "Refresh"}</button>
+          <div className="joke-section">
+            <h2>{joke.setup}</h2>
+            <h2>{joke.punchline}</h2>
+            <p hidden={isNext}>We're sorry to say this is your last joke! Boooo! Click on the button to refresh!</p>
+            <button className="NextButton" onClick={isNext ? this.handleNextClick : this.handleRefreshClick}>{isNext ? "Next Joke!" : "Refresh"}</button>
+          </div>
         </div>
       );
     }
