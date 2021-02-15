@@ -6,7 +6,7 @@
   "scripts": {
     "setup-database": "psql -f ./database/setup.sql",
     "seed-database": "npm run setup-database && knex seed:run",
-    "test": "jest app.test.js"
+    "test": "jest"
   },
   "author": "Alice Horsey",
   "license": "ISC",

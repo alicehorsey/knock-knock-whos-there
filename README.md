@@ -86,6 +86,7 @@ Example:
 }
 ```
 
-
+## Back-end Tests
+To run the tests for the back-end part of the project run ```npm run test``` from the back-end folder.
 
 

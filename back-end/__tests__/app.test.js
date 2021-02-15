@@ -4,7 +4,7 @@ const request = require("supertest");
 const connection = require("../database/connect");
 
 
-describe("Testing /jokes endpoint", () => {
+describe("Testing /jokes and /jokes/:jokesId endpoints", () => {
     afterAll(() => {
         return connection.destroy();
     });
