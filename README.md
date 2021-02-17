@@ -15,7 +15,7 @@ Once on the Postgres site you can click on the button called ```Download->``` an
 
 I created this project on MacOS and would recommend using Homebrew to install Postgres. The link to Homebrew is here https://brew.sh/.
 
-If using Linux you will need to set the username and password for Postgres once installation has completed. Follow this command exchanging username for your Linux username and choosing a password in place of yourpassword (this must be wrapped in quotation marks and the command should end with a ```;```) 
+If using Linux you will need to set the username and password for Postgres once installation has completed. Follow this command exchanging username for your Linux username and choosing a password in place of your password (this must be wrapped in quotation marks and the command should end with a ```;```) 
 In your terminal run ```psql``` followed by ```ALTER USER username WITH PASSWORD 'yourpassword';```. You can exit out of psql by typing ```\q```.
 
 ### Installation Instructions
