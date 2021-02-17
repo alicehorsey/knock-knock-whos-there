@@ -6,11 +6,23 @@ The jokes for this project have come from https://github.com/15Dkatz/official_jo
 ## Installation
 To view this web application on your local machine please follow these steps, after cloning the project down from the GitHub website.
 
+### Dependencies
+* I built this project using node v14.15.4.
+* This project also requires Postgres to be installed on your machine as it uses a PostgreSQL database. I have PostgreSQL 13 which is set up to run on port 5432.
+
+To install Postgres please follow this link to the Postgres installation website for more details. https://www.postgresql.org/
+Once on the Postgres site you can click on the button called ```Download->``` and follow the instructions for your operating system.
+
+I created this project on MacOS and would recommend using Homebrew to install Postgres. The link to Homebrew is here https://brew.sh/.
+
+If using Linux you will need to set the username and password for Postgres once installation has completed. Follow this command exchanging username for your Linux username and choosing a password in place of yourpassword (this must be wrapped in quotation marks and the command should end with a ```;```) 
+In your terminal run ```psql``` followed by ```ALTER USER username WITH PASSWORD 'yourpassword';```. You can exit out of psql by typing ```\q```.
+
+### Installation Instructions
+
 1. In the terminal navigate to the ```knock-knock-whos-there``` folder then ```cd back-end``` into the back-end folder.
 
-NB: I built this project using node v14.15.4.
-
-2. Create a knexfile.js at the root of the folder with the following code inside, as well as any passwords your machine may require.
+2. Create a knexfile.js at the root of the folder with the following code inside. If you are using Linux you will need to add your username and password (as set above) to the connection object.
 
 ```
 const ENV = process.env.NODE_ENV || 'development';
